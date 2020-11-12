@@ -14,38 +14,39 @@
  * limitations under the License.
  */
 
-import static spock.genesis.Gen.*
 import spock.lang.Specification
 
-class ListSpec extends Specification {
-    def 'generate a list with size range'() {
-        when: 'getting a random list of integers of a given size range'
-        def list = list(integer, 1, 5).iterator().next()
+class ListExamplesSpec extends Specification {
+    def "Scenario #scenario: #orig reversed should be #reversed"() {
+        expect:
+        orig.reverse() == reversed
 
-        then: 'it should have the following properties'
-        list instanceof List
-        list.size() in 1..5
-        list.every { it instanceof Integer }
+        where:
+        scenario              | orig      || reversed
+        'empty'               | []        || []
+        'singleton'           | [null]    || [null]
+        'singleton with null' | [1]       || [1]
+        'standard'            | [1, 2, 3] || [3, 2, 1]
     }
 
     def 'test list reversal'() {
+        given:
+        def orig = [1, 2, 3]
         when:
         def reversed = orig.reverse()
         then:
         reversed.size() == orig.size()
         reversed.reverse() == orig
-        if (orig) orig.eachWithIndex { item, i -> item == reversed[-(i + 1)] }
-        where:
-        orig << these([], [null]).then(list(integer)).take(10)
+        reversed == [3, 2, 1]
     }
 
     def 'test list shuffling'() {
+        given:
+        def orig = [1, 2, 3]
         when:
         def shuffled = orig.shuffled()
         then:
         shuffled.size() == orig.size()
-        shuffled.every { !it || it instanceof Integer }
-        where:
-        orig << these([], [null]).then(list(integer)).take(10)
+        shuffled.every { it in orig }
     }
 }
