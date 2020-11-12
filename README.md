@@ -32,6 +32,8 @@ to choose running via IDE junit integration over running via gradle.
 
 ## Running via Gitpod
 
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/paulk-asert/groovy-day-training)
+
 To run via gitpod. Click on the Gitpod button on the github site.
 Once loaded, type:
 
