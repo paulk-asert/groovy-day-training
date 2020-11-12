@@ -20,7 +20,7 @@ $ ./gradlew test
 ```
 > https://github.com/paulk-asert/groovy-day-training.git
 ...
-> gradlew SumBiggestPair:test SumBiggestPair:jacocoTestReport
+> gradlew test
 ```
 </details>
 
