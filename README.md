@@ -30,7 +30,7 @@ Make sure you have Java installed prior to running the examples.
 Alternatively, run any of the tests directly in the IDE. You might like
 to choose running via IDE junit integration over running via gradle.
 
-## Gitpod
+## Running via Gitpod
 
 To run via gitpod. Click on the Gitpod button on the github site.
 Once loaded, type:
