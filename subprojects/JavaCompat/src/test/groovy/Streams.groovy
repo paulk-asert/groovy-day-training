@@ -21,7 +21,7 @@ class Streams {
 
         assert expectedTwice == nums.collect(twice::call)
         assert expectedTwice == nums.stream().map(twice::call).toList()
-        assert expectedTwice as Integer[] == nums.stream().map(twice::call).toArray(String[]::new)
+        assert expectedTwice as Integer[] == nums.stream().map(twice::call).toArray(Integer[]::new)
         assert expectedTwice as Integer[] == nums.stream().map(twice::call).toArray(Integer)
 
         var three = 3
